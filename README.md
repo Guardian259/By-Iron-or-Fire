@@ -1,2 +1,2 @@
-# By-Iron-or-Fire
+# By Iron or Fire
  A Combat Enhancment Mod
