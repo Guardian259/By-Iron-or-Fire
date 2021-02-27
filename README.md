@@ -1,6 +1,7 @@
 ![](icon.png)
 
 #Chained Armors
+
 ***(To Be Expanded)***
 
 ![](Armor%20Tier%20Chart.png)
