@@ -1,0 +1,47 @@
+{
+  "item.bif.chained_emerald_helmet" : "Chained Emerald Helmet",
+  "item.bif.chained_emerald_chestplate" : "Chained Emerald Chestplate",
+  "item.bif.chained_emerald_leggings" : "Chained Emerald Leggings",
+  "item.bif.chained_emerald_boots" : "Chained Emerald Boots",
+
+  "item.bif.emerald_helmet" : "Emerald Helmet",
+  "item.bif.emerald_chestplate" : "Emerald Chestplate",
+  "item.bif.emerald_leggings" : "Emerald Leggings",
+  "item.bif.emerald_boots" : "Emerald Boots",
+
+
+  "item.bif.chained_netherite_helmet" : "Chained Netherite Helmet",
+  "item.bif.chained_netherite_chestplate" : "Chained Netherite Chestplate",
+  "item.bif.chained_netherite_leggings" : "Chained Netherite Leggings",
+  "item.bif.chained_netherite_boots" : "Chained Netherite Boots",
+
+  "item.bif.chained_diamond_helmet" : "Chained Diamond Helmet",
+  "item.bif.chained_diamond_chestplate" : "Chained Diamond Chestplate",
+  "item.bif.chained_diamond_leggings" : "Chained Diamond Leggings",
+  "item.bif.chained_diamond_boots" : "Chained Diamond Boots",
+
+  "item.bif.chained_iron_helmet" : "Chained Iron Helmet",
+  "item.bif.chained_iron_chestplate" : "Chained Iron Chestplate",
+  "item.bif.chained_iron_leggings" : "Chained Iron Leggings",
+  "item.bif.chained_iron_boots" : "Chained Iron Boots",
+
+  "item.bif.chained_gold_helmet" : "Chained Gold Helmet",
+  "item.bif.chained_gold_chestplate" : "Chained Gold Chestplate",
+  "item.bif.chained_gold_leggings" : "Chained Gold Leggings",
+  "item.bif.chained_gold_boots" : "Chained Gold Boots",
+
+  "item.bif.chained_leather_helmet" : "Chained Leather Helmet",
+  "item.bif.chained_leather_chestplate" : "Chained Leather Chestplate",
+  "item.bif.chained_leather_leggings" : "Chained Leather Leggings",
+  "item.bif.chained_leather_boots" : "Chained Leather Boots",
+
+
+  "advancements.story.a_peculiar_combination.title" : "A Peculiar Combination",
+  "advancements.story.a_peculiar_combination.description" : "Obtain a piece of chained armor",
+  "advancements.story.if_its_worth_doing.title" : "If It's Worth Doing...",
+  "advancements.story.if_its_worth_doing.description" : "Its worth overdoing obtain a piece chained diamond armor",
+  "advancements.story.one_mans_junk.title" : "One Man Junk",
+  "advancements.story.one_mans_junk.description" : "Is another mans treasure. Find a piece of overgrown armor",
+  "advancements.story.an_unexpected_outcome.title" : "An Unexpected Outcome",
+  "advancements.story.an_unexpected_outcome.description" : "Enter an end portal or gateway while wearing membraned armor and have more than forty experience"
+}
