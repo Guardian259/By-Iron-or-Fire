@@ -1,7 +1,7 @@
 ![](icon.png)
 
 ### A Comprehensive (and highly uncertain) Breakdown can be found at the:
-####[By Iron or Fire Trello](https://trello.com/b/XMMYLNES/by-iron-or-fire)
+#### [By Iron or Fire Trello](https://trello.com/b/XMMYLNES/by-iron-or-fire)
 
 # Player Name Render Changes & AI Tracking
 
