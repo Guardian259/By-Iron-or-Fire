@@ -9,18 +9,15 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.PlayerEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.screen.slot.Slot;
 import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -31,8 +28,36 @@ public class NameplateMixin {
 
     @Inject(method = "renderLabelIfPresent", at = @At("HEAD"), cancellable = true)
     public void render(AbstractClientPlayerEntity abstractClientPlayerEntity, Text text, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, CallbackInfo info){
-        ClientPlayerEntity p = MinecraftClient.getInstance().player;
-        List<ItemStack> equipedArmor = (List<ItemStack>) p.getArmorItems();
+        int[] visibility = {8,24,20,12};
 
+        ClientPlayerEntity p = MinecraftClient.getInstance().player;
+
+        if(abstractClientPlayerEntity != null) {
+            List<ItemStack> equipedArmor = abstractClientPlayerEntity.inventory.armor;
+
+            for (int j = 0; j < 4; ++j) {
+                ItemStack thisItem = equipedArmor.get(j);
+
+                if (thisItem == null || !(thisItem.getItem() instanceof ArmorItem)) {
+                    visibility[j] = ArmorVisibility.IRON.getMaterialVisibility(j);
+                } else {
+
+                    String material = ((ArmorItem) thisItem.getItem()).getMaterial().getName().toUpperCase();
+                    int thisArmorVisibility = ArmorVisibility.valueOf(material).getMaterialVisibility(j);
+                    visibility[j] = thisArmorVisibility;
+
+                }
+            }
+        }else{
+
+            for (int k = 0; k < 4; ++k) {
+                visibility[k] = ArmorVisibility.IRON.getMaterialVisibility(k);
+            }
+
+        }
+
+        if (abstractClientPlayerEntity != null && p != null && !p.getBlockPos().isWithinDistance(abstractClientPlayerEntity.getBlockPos(), Arrays.stream(visibility).sum())) {
+            info.cancel();
+        }
     }
 }

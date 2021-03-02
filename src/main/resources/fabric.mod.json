@@ -10,11 +10,11 @@
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Guardian259/By-Iron-or-Fire"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/bif/icon.png",
+  "license": "GNU-GPL v3",
+  "icon": "assets/bif/textures/items/chained_diamond_chestplate.png",
 
   "environment": "*",
   "entrypoints": {
@@ -23,7 +23,7 @@
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "bif.mixins.json"
   ],
 
   "depends": {
