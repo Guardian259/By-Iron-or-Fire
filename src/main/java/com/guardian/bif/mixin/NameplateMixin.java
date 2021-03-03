@@ -38,14 +38,12 @@ public class NameplateMixin {
             for (int j = 0; j < 4; ++j) {
                 ItemStack thisItem = equipedArmor.get(j);
 
-                if (thisItem == null || !(thisItem.getItem() instanceof ArmorItem)) {
+                if (!(thisItem.getItem() instanceof ArmorItem)) {
                     visibility[j] = ArmorVisibility.IRON.getMaterialVisibility(j);
                 } else {
-
                     String material = ((ArmorItem) thisItem.getItem()).getMaterial().getName().toUpperCase();
                     int thisArmorVisibility = ArmorVisibility.valueOf(material).getMaterialVisibility(j);
                     visibility[j] = thisArmorVisibility;
-
                 }
             }
         }else{

@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "com.guardian.bif.ByIronOrFire"
+    ],
+    "client": [
+      "com.guardian.bif.ByIronOrFireClient"
     ]
   },
   "mixins": [

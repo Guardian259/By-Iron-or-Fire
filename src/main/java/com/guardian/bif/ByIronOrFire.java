@@ -13,7 +13,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 
-public class ByIronOrFire implements ModInitializer, ClientModInitializer {
+public class ByIronOrFire implements ModInitializer {
 
 	public static final String MODID = "bif";
 
@@ -68,11 +68,5 @@ public class ByIronOrFire implements ModInitializer, ClientModInitializer {
 		public static final Item CHAINED_LEATHER_BOOTS = new DyeableArmor(CHAINED_LEATHER, EquipmentSlot.FEET);
 	}
 
-	@Override
-	public void onInitializeClient(){
-
-		ColorProviderRegistry.ITEM.register((Stack, tintIndex) -> tintIndex < 0 ? -1 : ((DyeableItem) Stack.getItem()).getColor(Stack), Items.CHAINED_LEATHER_HELMET, Items.CHAINED_LEATHER_CHESTPLATE, Items.CHAINED_LEATHER_LEGGINGS, Items.CHAINED_LEATHER_BOOTS);
-
-	}
 
 }
