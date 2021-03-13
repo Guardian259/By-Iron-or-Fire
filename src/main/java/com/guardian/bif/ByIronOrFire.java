@@ -1,16 +1,16 @@
 package com.guardian.bif;
 
-import com.guardian.bif.armor.BaseArmor;
-import com.guardian.bif.armor.DyeableArmor;
-import com.guardian.bif.armor.NetheriteArmor;
+import com.guardian.bif.armor.*;
 import com.guardian.bif.armor.material.*;
-import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class ByIronOrFire implements ModInitializer {
@@ -22,6 +22,7 @@ public class ByIronOrFire implements ModInitializer {
 	public static final ArmorMaterial CHAINED_IRON = new ChainedIron();
 	public static final ArmorMaterial CHAINED_GOLD = new ChainedGold();
 	public static final ArmorMaterial CHAINED_LEATHER = new ChainedLeather();
+	public static final Map <String, int[]> ARMORVISIBILITY = new HashMap<>();
 
 
 	@Override
@@ -30,7 +31,7 @@ public class ByIronOrFire implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		System.out.println("Initializing Items");
+		System.out.println("By Iron or Fire Initializing");
 
 		Registry.register(Registry.ITEM, new Identifier(MODID, "chained_netherite_helmet"), new NetheriteArmor(CHAINED_NETHERITE, EquipmentSlot.HEAD));
 		Registry.register(Registry.ITEM, new Identifier(MODID, "chained_netherite_chestplate"), new NetheriteArmor(CHAINED_NETHERITE, EquipmentSlot.CHEST));
@@ -57,7 +58,28 @@ public class ByIronOrFire implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier(MODID, "chained_leather_leggings"), Items.CHAINED_LEATHER_LEGGINGS);
 		Registry.register(Registry.ITEM, new Identifier(MODID, "chained_leather_boots"), Items.CHAINED_LEATHER_BOOTS);
 
-		System.out.println("ITem Initializing Complete, Success!");
+		Registry.register(Registry.ITEM, new Identifier(MODID, "elytra_chained_leather_chestplate"), Items.CHAINED_ELYTRA_LEATHER_CHESTPATE);
+		Registry.register(Registry.ITEM, new Identifier(MODID, "elytra_leather_chestplate"), Items.ELYTRA_LEATHER_CHESTPATE);
+
+		/*Array Values for Armor Visibility
+		*TODO: Abstract & Automate this for Modded Armors so they will function with By Iron or Fire
+		*WARNING DO NOT LOAD WITH OTHER ARMOR MODS ACTIVE THEIR MATERIALS WILL CAUSE A HARD CRASH
+		*/
+		ARMORVISIBILITY.put("chained_netherite", new int[]{24,56,48,32});
+		ARMORVISIBILITY.put("netherite", new int[]{20,52,44,28});
+		ARMORVISIBILITY.put("chained_diamond", new int[]{16,48,40,24});
+		ARMORVISIBILITY.put("diamond", new int[]{14,42,36,20});
+		ARMORVISIBILITY.put("chained_iron", new int[]{8,24,20,12});
+		ARMORVISIBILITY.put("chainmail", new int[]{8,24,20,12});
+		ARMORVISIBILITY.put("iron", new int[]{8,24,20,12});
+		ARMORVISIBILITY.put("turtle", new int[]{8,24,20,12});
+		ARMORVISIBILITY.put("chained_gold", new int[]{6,17,15,10});
+		ARMORVISIBILITY.put("gold", new int[]{4,12,10,6});
+		ARMORVISIBILITY.put("chained_leather", new int[]{2,6,5,3});
+		ARMORVISIBILITY.put("leather", new int[]{1,4,2,1});
+
+
+		System.out.println("By Iron or Fire Initializing Complete, Success!");
 	}
 
 	public static class Items {
@@ -66,6 +88,10 @@ public class ByIronOrFire implements ModInitializer {
 		public static final Item CHAINED_LEATHER_CHESTPLATE = new DyeableArmor(CHAINED_LEATHER, EquipmentSlot.CHEST);
 		public static final Item CHAINED_LEATHER_LEGGINGS = new DyeableArmor(CHAINED_LEATHER, EquipmentSlot.LEGS);
 		public static final Item CHAINED_LEATHER_BOOTS = new DyeableArmor(CHAINED_LEATHER, EquipmentSlot.FEET);
+
+		public static final Item CHAINED_ELYTRA_LEATHER_CHESTPATE = new ElytraLeatherArmor(CHAINED_LEATHER, EquipmentSlot.CHEST);
+
+		public static final Item ELYTRA_LEATHER_CHESTPATE = new ElytraLeatherArmor(ArmorMaterials.LEATHER, EquipmentSlot.CHEST);
 	}
 
 

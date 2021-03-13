@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing",
+  "ingredients": [
+    {
+      "item": "minecraft:leather_boots"
+    },
+    {
+      "item": "minecraft:chainmail_boots"
+    }
+  ],
+  "result": {
+    "item": "bif:chained_leather_boots",
+    "count": 1
+  }
+}

@@ -30,10 +30,16 @@
   "item.bif.chained_gold_leggings" : "Chained Gold Leggings",
   "item.bif.chained_gold_boots" : "Chained Gold Boots",
 
-  "item.bif.chained_leather_helmet" : "Chained Leather Helmet",
-  "item.bif.chained_leather_chestplate" : "Chained Leather Chestplate",
+  "item.bif.chained_leather_helmet" : "Chained Leather Hood",
+  "item.bif.chained_leather_chestplate" : "Chained Leather Tunic",
   "item.bif.chained_leather_leggings" : "Chained Leather Leggings",
   "item.bif.chained_leather_boots" : "Chained Leather Boots",
+
+  "item.bif.elytra_chained_leather_chestplate" : "Chained Leather Tunic",
+  "item.bif.elytra_leather_chestplate" : "Leather Tunic",
+
+
+  "item.bif.elytra_chestplate.tooltip" : "Elytra Attached",
 
 
   "advancements.story.a_peculiar_combination.title" : "A Peculiar Combination",

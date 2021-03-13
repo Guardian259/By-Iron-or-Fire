@@ -20,6 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.Arrays;
 import java.util.List;
 
+//TODO: Delete class; The entirety of this class is @Deprecated; replaced and refined in LivingEntityMixin & LivingEntityRendererMixin
 
 @Environment(EnvType.CLIENT)
 @Mixin(PlayerEntityRenderer.class)
