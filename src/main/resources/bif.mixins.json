@@ -4,9 +4,10 @@
   "package": "com.guardian.bif.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "LivingEntityMixin",
+    "PlayerEntityMixin"
   ],
   "client": [
-    "LivingEntityMixin",
     "LivingEntityRendererMixin"
   ],
   "injectors": {

@@ -8,7 +8,6 @@ import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,7 +21,7 @@ public class ByIronOrFire implements ModInitializer {
 	public static final ArmorMaterial CHAINED_IRON = new ChainedIron();
 	public static final ArmorMaterial CHAINED_GOLD = new ChainedGold();
 	public static final ArmorMaterial CHAINED_LEATHER = new ChainedLeather();
-	public static final Map <String, int[]> ARMORVISIBILITY = new HashMap<>();
+	public static final Map <ArmorMaterial, int[]> ARMORVISIBILITY = new HashMap<>();
 
 
 	@Override
@@ -65,18 +64,18 @@ public class ByIronOrFire implements ModInitializer {
 		*TODO: Abstract & Automate this for Modded Armors so they will function with By Iron or Fire
 		*WARNING DO NOT LOAD WITH OTHER ARMOR MODS ACTIVE THEIR MATERIALS WILL CAUSE A HARD CRASH
 		*/
-		ARMORVISIBILITY.put("chained_netherite", new int[]{24,56,48,32});
-		ARMORVISIBILITY.put("netherite", new int[]{20,52,44,28});
-		ARMORVISIBILITY.put("chained_diamond", new int[]{16,48,40,24});
-		ARMORVISIBILITY.put("diamond", new int[]{14,42,36,20});
-		ARMORVISIBILITY.put("chained_iron", new int[]{8,24,20,12});
-		ARMORVISIBILITY.put("chainmail", new int[]{8,24,20,12});
-		ARMORVISIBILITY.put("iron", new int[]{8,24,20,12});
-		ARMORVISIBILITY.put("turtle", new int[]{8,24,20,12});
-		ARMORVISIBILITY.put("chained_gold", new int[]{6,17,15,10});
-		ARMORVISIBILITY.put("gold", new int[]{4,12,10,6});
-		ARMORVISIBILITY.put("chained_leather", new int[]{2,6,5,3});
-		ARMORVISIBILITY.put("leather", new int[]{1,4,2,1});
+		ARMORVISIBILITY.put(CHAINED_NETHERITE, new int[]{24,56,48,32});
+		ARMORVISIBILITY.put(ArmorMaterials.NETHERITE, new int[]{20,52,44,28});
+		ARMORVISIBILITY.put(CHAINED_DIAMOND, new int[]{16,48,40,24});
+		ARMORVISIBILITY.put(ArmorMaterials.DIAMOND, new int[]{14,42,36,20});
+		ARMORVISIBILITY.put(CHAINED_IRON, new int[]{8,24,20,12});
+		ARMORVISIBILITY.put(ArmorMaterials.CHAIN, new int[]{8,24,20,12});
+		ARMORVISIBILITY.put(ArmorMaterials.IRON, new int[]{8,24,20,12});
+		ARMORVISIBILITY.put(ArmorMaterials.TURTLE, new int[]{8,24,20,12});
+		ARMORVISIBILITY.put(CHAINED_GOLD, new int[]{6,17,15,10});
+		ARMORVISIBILITY.put(ArmorMaterials.GOLD, new int[]{4,12,10,6});
+		ARMORVISIBILITY.put(CHAINED_LEATHER, new int[]{2,6,5,3});
+		ARMORVISIBILITY.put(ArmorMaterials.LEATHER, new int[]{1,4,2,1});
 
 
 		System.out.println("By Iron or Fire Initializing Complete, Success!");

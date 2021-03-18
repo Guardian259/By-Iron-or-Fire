@@ -27,7 +27,8 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity>{
     /*Replaces float f within hasLabel and sets (32.0F : 64.0F) to (currentVisibility/2 : currentVisibility) to allow for dynamic alteration of the entity nameplate*/
     @ModifyVariable(method = "hasLabel", at = @At(value = "STORE", ordinal = 0))
     private float nameplateVisibility(float f){
-        int currentVisibility = Arrays.stream(((EntityVisibility) entityLiving).entityVisibility).sum();
+        int[] array = ((EntityVisibility) entityLiving).getEntityVisibility();
+        int currentVisibility = Arrays.stream(array).sum();
         return entityLiving.isSneaky() ? ((float) currentVisibility)/2 : ((float) currentVisibility);
     }
 
