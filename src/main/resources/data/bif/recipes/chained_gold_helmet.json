@@ -2,14 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:leather_helmet"
+      "item": "minecraft:golden_helmet"
     },
     {
       "item": "minecraft:chainmail_helmet"
     }
   ],
   "result": {
-    "item": "chained_leather_helmet",
-    "count": 1
+    "item": "bif:chained_gold_helmet"
   }
 }

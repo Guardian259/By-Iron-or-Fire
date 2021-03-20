@@ -12,45 +12,24 @@
     "frame": "challenge",
     "hidden": "true"
   },
-  "parent": "bif:story/if_it's_worth_doing",
+  "parent": "bif:story/if_its_worth_doing",
   "rewards": {
     "experience": 100
   },
   "criteria": {
-    "gateway_diamond_helmet": {
+    "gateway_armor": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "item": "bif:gateway_diamond_helmet"
-          }
-        ]
-      }
-    },
-    "gateway_diamond_chestplate": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
+          },
           {
             "item": "bif:gateway_diamond_chestplate"
-          }
-        ]
-      }
-    },
-    "gateway_diamond_leggings": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
+          },
           {
             "item": "bif:gateway_diamond_leggings"
-          }
-        ]
-      }
-    },
-    "gateway_diamond_boots": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
+          },
           {
             "item": "bif:gateway_diamond_boots"
           }
@@ -60,10 +39,7 @@
   },
   "requirements": [
     [
-      "gateway_diamond_helmet",
-      "gateway_diamond_chestplate",
-      "gateway_diamond_leggings",
-      "gateway_diamond_boots"
+      "gateway_armor"
     ]
   ]
 }

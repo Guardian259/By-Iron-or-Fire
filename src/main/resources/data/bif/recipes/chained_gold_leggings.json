@@ -2,14 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:leather_leggings"
+      "item": "minecraft:golden_leggings"
     },
     {
       "item": "minecraft:chainmail_leggings"
     }
   ],
   "result": {
-    "item": "chained_leather_leggings",
-    "count": 1
+    "item": "bif:chained_gold_leggings"
   }
 }

@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "bif:chained_netherite_helmet"
+    },
+    "title": {
+      "translate": "advancements.adventure.tough_nut_to_crack.title"
+    },
+    "description": {
+      "translate": "advancements.adventure.tough_nut_to_crack.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "damage_blocked": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "blocked" : true,
+          "bypasses_armor": false,
+          "taken": {
+            "min" : 20.0
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "damage_blocked"
+    ]
+  ]
+}

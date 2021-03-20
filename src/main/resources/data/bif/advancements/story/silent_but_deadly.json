@@ -1,0 +1,43 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:leather_chestplate"
+    },
+    "title": {
+      "translate": "advancements.story.silent_but_deadly.title"
+    },
+    "description": {
+      "translate": "advancements.story.silent_but_deadly.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "hidden": true
+  },
+  "parent": "minecraft:story/obtain_armor",
+  "criteria": {
+    "chained_leather_armor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_leather_helmet"
+          },
+          {
+            "item": "bif:chained_leather_chestplate"
+          },
+          {
+            "item": "bif:chained_leather_leggings"
+          },
+          {
+            "item": "bif:chained_leather_boots"
+          }
+        ]
+      }
+    },
+    "requirements": [
+      [
+        "chained_leather_armor"
+      ]
+    ]
+  }
+}

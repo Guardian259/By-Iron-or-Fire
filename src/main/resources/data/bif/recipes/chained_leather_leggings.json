@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:leather_leggings"
+    },
+    {
+      "item": "minecraft:chainmail_leggings"
+    }
+  ],
+  "result": {
+    "item": "bif:chained_leather_leggings"
+  }
+}

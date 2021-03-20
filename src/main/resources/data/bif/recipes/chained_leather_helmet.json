@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:leather_helmet"
+    },
+    {
+      "item": "minecraft:chainmail_helmet"
+    }
+  ],
+  "result": {
+    "item": "bif:chained_leather_helmet"
+  }
+}

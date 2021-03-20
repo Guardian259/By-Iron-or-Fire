@@ -42,12 +42,14 @@
   "item.bif.elytra_chestplate.tooltip" : "Elytra Attached",
 
 
-  "advancements.story.a_peculiar_combination.title" : "A Peculiar Combination",
-  "advancements.story.a_peculiar_combination.description" : "Obtain a piece of chained armor",
-  "advancements.story.if_its_worth_doing.title" : "If It's Worth Doing...",
-  "advancements.story.if_its_worth_doing.description" : "Its worth overdoing obtain a piece chained diamond armor",
+  "advancements.story.iron_sharpens_iron.title" : "As Iron Sharpens Iron",
+  "advancements.story.iron_sharpens_iron.description" : "Obtain a piece of chained armor and strengthen your defence",
+  "advancements.story.if_its_worth_doing.title" : "If Its Worth Doing...",
+  "advancements.story.if_its_worth_doing.description" : "Its worth overdoing, obtain a set Chained Netherite Armor",
   "advancements.story.one_mans_junk.title" : "One Man Junk",
-  "advancements.story.one_mans_junk.description" : "Is another mans treasure. Find a piece of overgrown armor",
+  "advancements.story.one_mans_junk.description" : "Is another mans treasure, Find a piece of overgrown armor",
   "advancements.story.an_unexpected_outcome.title" : "An Unexpected Outcome",
-  "advancements.story.an_unexpected_outcome.description" : "Enter an end portal or gateway while wearing membraned armor and have more than forty experience"
+  "advancements.story.an_unexpected_outcome.description" : "Enter an end portal or gateway while wearing membraned armor and have more than forty experience",
+  "advancements.story.silent_but_deadly.title" : "Silent But Deadly",
+  "advancements.story.silent_but_deadly.description" : "Sneak undetected past a creeper while wearing leather armor"
 }

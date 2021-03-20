@@ -1,0 +1,244 @@
+{
+  "display": {
+    "icon": {
+      "item": "bif:chained_iron_chestplate"
+    },
+    "title": {
+      "translate": "advancements.story.iron_sharpens_iron.title"
+    },
+    "description": {
+      "translate": "advancements.story.iron_sharpens_iron.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:story/obtain_armor",
+  "criteria": {
+    "chained_netherite_helmet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_netherite_helmet"
+          }
+        ]
+      }
+    },
+    "chained_netherite_chestplate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_netherite_chestplate"
+          }
+        ]
+      }
+    },
+    "chained_netherite_leggings": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_netherite_leggings"
+          }
+        ]
+      }
+    },
+    "chained_netherite_boots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_netherite_boots"
+          }
+        ]
+      }
+    },
+    "chained_diamond_helmet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_diamond_helmet"
+          }
+        ]
+      }
+    },
+    "chained_diamond_chestplate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_diamond_chestplate"
+          }
+        ]
+      }
+    },
+    "chained_diamond_leggings": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_diamond_leggings"
+          }
+        ]
+      }
+    },
+    "chained_diamond_boots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_diamond_boots"
+          }
+        ]
+      }
+    },
+    "chained_iron_helmet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_iron_helmet"
+          }
+        ]
+      }
+    },
+    "chained_iron_chestplate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_iron_chestplate"
+          }
+        ]
+      }
+    },
+    "chained_iron_leggings": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_iron_leggings"
+          }
+        ]
+      }
+    },
+    "chained_iron_boots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_iron_boots"
+          }
+        ]
+      }
+    },
+    "chained_gold_helmet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_gold_helmet"
+          }
+        ]
+      }
+    },
+    "chained_gold_chestplate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_gold_chestplate"
+          }
+        ]
+      }
+    },
+    "chained_gold_leggings": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_gold_leggings"
+          }
+        ]
+      }
+    },
+    "chained_gold_boots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_gold_boots"
+          }
+        ]
+      }
+    },
+    "chained_leather_helmet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_leather_helmet"
+          }
+        ]
+      }
+    },
+    "chained_leather_chestplate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_leather_chestplate"
+          }
+        ]
+      }
+    },
+    "chained_leather_leggings": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_leather_leggings"
+          }
+        ]
+      }
+    },
+    "chained_leather_boots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:chained_leather_boots"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "chained_netherite_helmet",
+      "chained_netherite_chestplate",
+      "chained_netherite_leggings",
+      "chained_netherite_boots",
+      "chained_diamond_helmet",
+      "chained_diamond_chestplate",
+      "chained_diamond_leggings",
+      "chained_diamond_boots",
+      "chained_iron_helmet",
+      "chained_iron_chestplate",
+      "chained_iron_leggings",
+      "chained_iron_boots",
+      "chained_gold_helmet",
+      "chained_gold_chestplate",
+      "chained_gold_leggings",
+      "chained_gold_boots",
+      "chained_leather_helmet",
+      "chained_leather_chestplate",
+      "chained_leather_leggings",
+      "chained_leather_boots"
+    ]
+  ]
+}

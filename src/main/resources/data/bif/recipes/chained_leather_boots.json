@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:smithing",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "item": "minecraft:leather_boots"
@@ -9,7 +9,6 @@
     }
   ],
   "result": {
-    "item": "bif:chained_leather_boots",
-    "count": 1
+    "item": "bif:chained_leather_boots"
   }
 }
