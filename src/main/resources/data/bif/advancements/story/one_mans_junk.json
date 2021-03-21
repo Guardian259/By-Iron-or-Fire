@@ -1,58 +1,27 @@
 {
   "display": {
     "icon": {
-      "item": "bif:chained_iron_chestplate",
-      "nbt": "overgrown"
+      "item": "bif:chained_gold_chestplate"
     },
     "title": {
       "translate": "advancements.story.one_mans_junk.title"
     },
     "description": {
       "translate": "advancements.story.one_mans_junk.description"
-    }
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   },
   "parent": "minecraft:story/obtain_armor",
   "criteria": {
-    "chained_iron_helmet": {
+    "overgrown_armor": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "bif:chained_iron_helmet",
-            "nbt": "overgrown"
-          }
-        ]
-      }
-    },
-    "chained_iron_chestplate": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "bif:chained_iron_chestplate",
-            "nbt": "overgrown"
-          }
-        ]
-      }
-    },
-    "chained_iron_leggings": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "bif:chained_iron_leggings",
-            "nbt": "overgrown"
-          }
-        ]
-      }
-    },
-    "chained_iron_boots": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "bif:chained_iron_boots",
-            "nbt": "overgrown"
+            "nbt": "{String:\"overgrown\"}"
           }
         ]
       }
@@ -60,10 +29,7 @@
   },
   "requirements": [
     [
-      "chained_iron_helmet",
-      "chained_iron_chestplate",
-      "chained_iron_leggings",
-      "chained_iron_boots"
+      "overgrown_armor"
     ]
   ]
 }

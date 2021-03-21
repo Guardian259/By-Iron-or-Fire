@@ -1,0 +1,43 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:leather_chestplate"
+    },
+    "title": {
+      "translate": "advancements.adventure.silent_but_deadly.title"
+    },
+    "description": {
+      "translate": "advancements.adventure.silent_but_deadly.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "hidden": true
+  },
+  "parent": "minecraft:adventure/root",
+  "criteria": {
+    "leather_armor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:leather_helmet"
+          },
+          {
+            "item": "minecraft:leather_chestplate"
+          },
+          {
+            "item": "minecraft:leather_leggings"
+          },
+          {
+            "item": "minecraft:leather_boots"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "leather_armor"
+    ]
+  ]
+}

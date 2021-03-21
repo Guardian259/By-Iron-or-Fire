@@ -1,0 +1,42 @@
+{
+  "display": {
+    "icon": {
+      "item": "bif:chained_netherite_chestplate"
+    },
+    "title": {
+      "translate": "advancements.adventure.getting_out_of_hand.title"
+    },
+    "description": {
+      "translate": "advancements.adventure.getting_out_of_hand.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "rewards": {
+    "experience": 100
+  },
+  "parent": "bif:adventure/tough_nut_to_crack",
+  "criteria": {
+    "damage_blocked": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "blocked": true,
+          "type": {
+            "bypasses_armor": false
+          },
+          "taken": {
+            "min": 20.0
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "damage_blocked"
+    ]
+  ]
+}

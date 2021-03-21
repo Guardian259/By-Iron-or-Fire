@@ -44,12 +44,18 @@
 
   "advancements.story.iron_sharpens_iron.title" : "As Iron Sharpens Iron",
   "advancements.story.iron_sharpens_iron.description" : "Obtain a piece of chained armor and strengthen your defence",
-  "advancements.story.if_its_worth_doing.title" : "If Its Worth Doing...",
-  "advancements.story.if_its_worth_doing.description" : "Its worth overdoing, obtain a set Chained Netherite Armor",
   "advancements.story.one_mans_junk.title" : "One Man Junk",
   "advancements.story.one_mans_junk.description" : "Is another mans treasure, Find a piece of overgrown armor",
-  "advancements.story.an_unexpected_outcome.title" : "An Unexpected Outcome",
-  "advancements.story.an_unexpected_outcome.description" : "Enter an end portal or gateway while wearing membraned armor and have more than forty experience",
-  "advancements.story.silent_but_deadly.title" : "Silent But Deadly",
-  "advancements.story.silent_but_deadly.description" : "Sneak undetected past a creeper while wearing leather armor"
+  "advancements.adventure.tough_nut_to_crack.title" : "Tough Nut To Crack",
+  "advancements.adventure.tough_nut_to_crack.description" : "Have your armor fully block a lethal damage hit that would've otherwise killed you",
+  "advancements.adventure.getting_out_of_hand.title" : "Getting Out Of Hand",
+  "advancements.adventure.getting_out_of_hand.description" : "Block a lethal amount of damage from the void while in the Overworld",
+  "advancements.adventure.silent_but_deadly.title" : "Silent But Deadly",
+  "advancements.adventure.silent_but_deadly.description" : "Sneak undetected past a creeper while wearing leather armor",
+  "advancements.story.insult_to_injury.title" : "Insult To Injury",
+  "advancements.story.insult_to_injury.description" : "Ignite a charged creeper while undetected",
+  "advancements.nether.if_its_worth_doing.title" : "If It's Worth Doing...",
+  "advancements.nether.if_its_worth_doing.description" : "It's worth overdoing, obtain a set Chained Netherite armor",
+  "advancements.end.an_unexpected_outcome.title" : "An Unexpected Outcome",
+  "advancements.end.an_unexpected_outcome.description" : "Enter an end portal or gateway while wearing Membraned armor and have more than forty experience"
 }

@@ -1,0 +1,54 @@
+{
+  "display": {
+    "icon": {
+      "item": "bif:chained_netherite_chestplate"
+    },
+    "title": {
+      "translate": "advancements.end.an_unexpected_outcome.title"
+    },
+    "description": {
+      "translate": "advancements.end.an_unexpected_outcome.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "rewards": {
+    "experience": 100
+  },
+  "parent": "minecraft:end/root",
+  "criteria": {
+    "gateway_armor": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "from": "minecraft:overworld",
+        "to": "minecraft:the_end",
+        "player": {
+          "level": 40,
+          "entity_properties": {
+            "equipment": {
+              "head": {
+                "nbt": "membrane"
+              },
+              "chest": {
+                "nbt": "membrane"
+              },
+              "legs": {
+                "nbt": "membrane"
+              },
+              "feet": {
+                "nbt": "membrane"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "gateway_armor"
+    ]
+  ]
+}
