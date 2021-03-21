@@ -4,10 +4,10 @@
       "item": "bif:chained_gold_chestplate"
     },
     "title": {
-      "translate": "advancements.story.one_mans_junk.title"
+      "translate": "advancements.story.one_mans_trash.title"
     },
     "description": {
-      "translate": "advancements.story.one_mans_junk.description"
+      "translate": "advancements.story.one_mans_trash.description"
     },
     "frame": "task",
     "show_toast": true,
