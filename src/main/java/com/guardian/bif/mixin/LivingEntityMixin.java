@@ -2,14 +2,18 @@ package com.guardian.bif.mixin;
 
 import com.guardian.bif.ByIronOrFire;
 import com.guardian.bif.util.EntityVisibility;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.*;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.Arrays;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin implements EntityVisibility {
@@ -49,6 +53,14 @@ public abstract class LivingEntityMixin implements EntityVisibility {
             /*sets the current visibility slot with either {8,24,20,12} for a sum of 64, the default minecraft visibility value */
             setEntityVisibility(currentSlotId, itemVisibility);
         }
+    }
+
+    @Inject(method = "getAttackDistanceScalingFactor", at = @At("TAIL"), cancellable = true)
+    public void attackDistanceMultiplier(@Nullable Entity entity, CallbackInfoReturnable<Double> cir){
+            int currentVisibility = Arrays.stream(this.entityVisibility).sum();
+            double d = cir.getReturnValue();
+            d *= ((currentVisibility * 2) / 64d);
+            cir.setReturnValue(d);
     }
 
 
