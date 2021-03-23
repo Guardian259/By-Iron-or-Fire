@@ -1,7 +1,7 @@
 package com.guardian.bif.mixin;
 
 import com.guardian.bif.ByIronOrFire;
-import com.guardian.bif.util.EntityVisibility;
+import com.guardian.bif.util.LivingEntityAccessor;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -16,10 +16,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Arrays;
 
 @Mixin(LivingEntity.class)
-public abstract class LivingEntityMixin implements EntityVisibility {
+public abstract class LivingEntityMixin implements LivingEntityAccessor {
 
     @Unique
     int[] entityVisibility = new int[4];
+
+    @Unique
+    boolean isDetected = false;
 
 
     @Override
@@ -31,6 +34,17 @@ public abstract class LivingEntityMixin implements EntityVisibility {
     public void setEntityVisibility(int slotId, int value) {
         this.entityVisibility[slotId] = value;
     }
+
+    @Override
+    public boolean getIsDetected() {
+        return this.isDetected;
+    }
+
+    @Override
+    public void setIsDetected(boolean status) {
+        this.isDetected = status;
+    }
+
 
     @Inject(method = "method_30125", at = @At("TAIL"))
     private void equipmentVisibility(EquipmentSlot equipmentSlot, CallbackInfoReturnable<ItemStack> cir) {
@@ -56,11 +70,12 @@ public abstract class LivingEntityMixin implements EntityVisibility {
     }
 
     @Inject(method = "getAttackDistanceScalingFactor", at = @At("TAIL"), cancellable = true)
-    public void attackDistanceMultiplier(@Nullable Entity entity, CallbackInfoReturnable<Double> cir){
-            int currentVisibility = Arrays.stream(this.entityVisibility).sum();
-            double d = cir.getReturnValue();
-            d *= ((currentVisibility * 2) / 64d);
-            cir.setReturnValue(d);
+    public void attackDistanceMultiplier(@Nullable Entity entity, CallbackInfoReturnable<Double> cir) {
+        int currentVisibility = Arrays.stream(this.entityVisibility).sum();
+        double detected = getIsDetected() ? ((double) (currentVisibility / 2)) : 0;
+        double d = cir.getReturnValue();
+        d *= (((currentVisibility * 2) + detected) / 64d);
+        cir.setReturnValue(d);
     }
 
 

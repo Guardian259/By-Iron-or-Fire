@@ -2,17 +2,21 @@ package com.guardian.bif;
 
 import com.guardian.bif.armor.*;
 import com.guardian.bif.armor.material.*;
+import com.guardian.bif.util.event.RenderEntityElytraCallback;
+import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import top.theillusivec4.caelus.api.event.RenderElytraCallback;
 
 import java.util.HashMap;
 import java.util.Map;
 
 
-public class ByIronOrFire implements ModInitializer {
+public class ByIronOrFire implements ModInitializer, ClientModInitializer {
 
 	public static final String MODID = "bif";
 
@@ -79,6 +83,50 @@ public class ByIronOrFire implements ModInitializer {
 
 
 		System.out.println("By Iron or Fire Initializing Complete, Success!");
+	}
+
+	@Override
+	public void onInitializeClient() {
+		//Registers all Dyeable Item's
+		ColorProviderRegistry.ITEM.register((Stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem) Stack.getItem()).getColor(Stack), ByIronOrFire.Items.CHAINED_LEATHER_HELMET, ByIronOrFire.Items.CHAINED_LEATHER_CHESTPLATE, ByIronOrFire.Items.CHAINED_LEATHER_LEGGINGS, ByIronOrFire.Items.CHAINED_LEATHER_BOOTS, ByIronOrFire.Items.CHAINED_ELYTRA_LEATHER_CHESTPATE, ByIronOrFire.Items.ELYTRA_LEATHER_CHESTPATE);
+
+		//Renders the Elytra Model on Player Entities. Does not render on Armor Stands.
+		RenderElytraCallback.EVENT.register((playerEntity, renderElytraInfo) -> {
+
+			ItemStack itemStack = playerEntity.getEquippedStack(EquipmentSlot.CHEST);
+
+			if(itemStack.getItem() instanceof ElytraLeatherArmor){
+
+				renderElytraInfo.activateRender();
+
+				if(itemStack.hasGlint()){
+
+					renderElytraInfo.activateGlow();
+
+				}
+
+			}
+
+		});
+
+		//Renders the Elytra Model on Armor Stand Entities. Does NOT currently function.
+		RenderEntityElytraCallback.EVENT.register((armorStandEntity, renderElytraInfo) -> {
+
+			ItemStack itemStack = armorStandEntity.getEquippedStack(EquipmentSlot.CHEST);
+
+			if(itemStack.getItem() instanceof ElytraLeatherArmor){
+
+				renderElytraInfo.activateRender();
+
+				if(itemStack.hasGlint()){
+
+					renderElytraInfo.activateGlow();
+
+				}
+
+			}
+		});
+
 	}
 
 	public static class Items {

@@ -1,6 +1,6 @@
 package com.guardian.bif.mixin;
 
-import com.guardian.bif.util.EntityVisibility;
+import com.guardian.bif.util.LivingEntityAccessor;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.entity.LivingEntityRenderer;
@@ -27,7 +27,7 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity>{
     /*Replaces float f within hasLabel and sets (32.0F : 64.0F) to (currentVisibility/2 : currentVisibility) to allow for dynamic alteration of the entity nameplate*/
     @ModifyVariable(method = "hasLabel", at = @At(value = "STORE", ordinal = 0))
     private float nameplateVisibility(float f){
-        int[] array = ((EntityVisibility) entityLiving).getEntityVisibility();
+        int[] array = ((LivingEntityAccessor) entityLiving).getEntityVisibility();
         int currentVisibility = Arrays.stream(array).sum();
         return entityLiving.isSneaky() ? ((float) currentVisibility)/2 : ((float) currentVisibility);
     }

@@ -22,7 +22,7 @@
       "com.guardian.bif.ByIronOrFire"
     ],
     "client": [
-      "com.guardian.bif.ByIronOrFireClient"
+      "com.guardian.bif.ByIronOrFire"
     ]
   },
   "mixins": [
