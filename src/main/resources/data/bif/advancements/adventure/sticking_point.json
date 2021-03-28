@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "bif:mortar_bomb"
+    },
+    "title": {
+      "translate": "advancements.adventure.sticking_point.title"
+    },
+    "description": {
+      "translate": "advancements.adventure.sticking_point.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "bif:adventure/heavy_hitter",
+  "criteria": {
+    "stuck_mortar": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:mortar_bomb"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "stuck_mortar"
+    ]
+  ]
+}

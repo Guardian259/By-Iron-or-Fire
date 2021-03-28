@@ -1,0 +1,8 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "bif:items/mortar_core",
+    "layer1": "bif:items/mortar_fuse_overlay",
+    "layer2": "bif:items/mortar_overlay"
+  }
+}

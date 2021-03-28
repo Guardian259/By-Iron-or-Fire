@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "bif:mortar_bomb"
+    },
+    "title": {
+      "translate": "advancements.adventure.pierce_wall.title"
+    },
+    "description": {
+      "translate": "advancements.adventure.pierce_wall.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "bif:adventure/heavy_hitter",
+  "criteria": {
+    "mortar": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bif:mortar_bomb"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "mortar"
+    ]
+  ]
+}
