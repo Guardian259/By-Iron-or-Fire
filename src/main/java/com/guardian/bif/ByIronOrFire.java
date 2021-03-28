@@ -10,7 +10,6 @@ import com.guardian.bif.util.registries.ItemRegistry;
 import com.guardian.bif.util.registries.VisibilityRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
@@ -36,7 +35,7 @@ public class ByIronOrFire implements ModInitializer, ClientModInitializer {
     public static final ArmorMaterial CHAINED_LEATHER = new ChainedLeather();
     public static final Map<ArmorMaterial, int[]> ARMORVISIBILITY = new HashMap<>();
     public static final Logger LOG = LogManager.getLogger(ByIronOrFire.MODID);
-    
+
     public static Identifier id(String name) {
         return new Identifier(MODID, name);
     }
