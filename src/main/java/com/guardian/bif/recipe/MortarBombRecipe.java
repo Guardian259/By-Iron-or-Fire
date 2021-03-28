@@ -1,7 +1,7 @@
 package com.guardian.bif.recipe;
 
 import com.google.common.collect.Lists;
-import com.guardian.bif.util.registries.ItemRegistry;
+import com.guardian.bif.util.registries.server.ItemRegistry;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.item.DyeItem;
 import net.minecraft.item.ItemStack;

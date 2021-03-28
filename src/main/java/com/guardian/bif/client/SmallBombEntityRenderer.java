@@ -2,7 +2,7 @@ package com.guardian.bif.client;
 
 
 import com.guardian.bif.entity.ExplosiveBombEntity;
-import com.guardian.bif.util.registries.ItemRegistry;
+import com.guardian.bif.util.registries.server.ItemRegistry;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.VertexConsumerProvider;

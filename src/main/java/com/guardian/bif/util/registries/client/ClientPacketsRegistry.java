@@ -1,4 +1,4 @@
-package com.guardian.bif.util.registries;
+package com.guardian.bif.util.registries.client;
 
 import com.guardian.bif.entity.ExplosiveBombEntity;
 import net.fabricmc.fabric.impl.networking.ClientSidePacketRegistryImpl;
