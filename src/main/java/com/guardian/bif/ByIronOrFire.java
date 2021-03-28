@@ -1,6 +1,5 @@
 package com.guardian.bif;
 
-import com.guardian.bif.armor.material.*;
 import com.guardian.bif.client.SmallBombEntityRenderer;
 import com.guardian.bif.util.registries.client.ClientCallbackRegistry;
 import com.guardian.bif.util.registries.client.ClientPacketsRegistry;
