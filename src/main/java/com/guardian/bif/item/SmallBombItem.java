@@ -2,7 +2,6 @@ package com.guardian.bif.item;
 
 import com.guardian.bif.entity.ExplosiveBombEntity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
