@@ -47,6 +47,8 @@ public class VisibilityRegistry {
     /**Loops through all identified ArmorMaterials, at SERVER_STARTING and checks for any existing keys,
      * if no preexisting key is present a new ARMORVISIBILITY HashMap is registered & stored
      * @param materialList the list of ArmorMaterials identified at server startup
+     * @see VisibilityRegistry#register(net.minecraft.item.ArmorMaterial, int[])
+     * @see VisibilityRegistry#generateValues(net.minecraft.item.ArmorMaterial)
      */
     private static void setVisibilityValues(List<ArmorMaterial> materialList) {
         for (ArmorMaterial currentMaterial :
@@ -73,6 +75,7 @@ public class VisibilityRegistry {
      * @see VisibilityRegistry#setVisibilityValues(java.util.List)
      */
     public static void init() {
+        //Multipliers used in array gen of generateValues
         VISIBILITY_MULTIPLIERS.put("visible", new float[]{17.86F, 32.00F, 38.00F, 12.50F});
         VISIBILITY_MULTIPLIERS.put("normal", new float[]{18.75F, 31.00F, 38.00F, 12.50F});
         VISIBILITY_MULTIPLIERS.put("sneaky", new float[]{12.50F,25.00F, 50.00F, 12.50F});
@@ -98,7 +101,6 @@ public class VisibilityRegistry {
         ARMORVISIBILITY.put(ArmorMaterials.LEATHER, new int[]{1, 4, 2, 1});
         //will generate approximations based on all ArmorMaterials if no visibilityValues are present
         setVisibilityValues(materialList);
-
         LOG.info("Generation Success");
     }
 }

@@ -4,6 +4,7 @@
   "package": "com.guardian.bif.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "ArmorItemMixin",
     "LivingEntityMixin",
     "PlayerEntityMixin",
     "TargetPredicateMixin"
