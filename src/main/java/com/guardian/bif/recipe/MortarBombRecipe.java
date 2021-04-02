@@ -11,12 +11,15 @@ import net.minecraft.nbt.Tag;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SpecialCraftingRecipe;
+import net.minecraft.recipe.SpecialRecipeSerializer;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
 import java.util.List;
 
 public class MortarBombRecipe extends SpecialCraftingRecipe {
+
+    public static final SpecialRecipeSerializer<MortarBombRecipe> CRAFTING_MORTAR_BOMB = new SpecialRecipeSerializer<>(MortarBombRecipe :: new);
 
     private static final Ingredient DURRATION_MODIFIER;
     private static final Ingredient FIREWORKSTAR;

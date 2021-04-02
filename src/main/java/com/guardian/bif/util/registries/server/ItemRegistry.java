@@ -3,7 +3,6 @@ package com.guardian.bif.util.registries.server;
 import com.guardian.bif.ByIronOrFire;
 import com.guardian.bif.armor.BaseArmor;
 import com.guardian.bif.armor.DyeableArmor;
-import com.guardian.bif.armor.ElytraLeatherArmor;
 import com.guardian.bif.armor.NetheriteArmor;
 import com.guardian.bif.armor.material.*;
 import com.guardian.bif.item.HandMortarItem;
@@ -11,7 +10,6 @@ import com.guardian.bif.item.SmallBombItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.registry.Registry;
@@ -46,10 +44,6 @@ public class ItemRegistry {
     public static final Item CHAINED_LEATHER_CHESTPLATE = register("chained_leather_chestplate", new DyeableArmor(CHAINED_LEATHER, EquipmentSlot.CHEST));
     public static final Item CHAINED_LEATHER_LEGGINGS =register("chained_leather_leggings", new DyeableArmor(CHAINED_LEATHER, EquipmentSlot.LEGS));
     public static final Item CHAINED_LEATHER_BOOTS = register("chained_leather_boots", new DyeableArmor(CHAINED_LEATHER, EquipmentSlot.FEET));
-
-    //TODO: Reimplement as NBT Tags
-    public static final Item CHAINED_ELYTRA_LEATHER_CHESTPATE = register("elytra_chained_leather_chestplate", new ElytraLeatherArmor(CHAINED_LEATHER, EquipmentSlot.CHEST));
-    public static final Item ELYTRA_LEATHER_CHESTPATE = register("elytra_leather_chestplate", new ElytraLeatherArmor(ArmorMaterials.LEATHER, EquipmentSlot.CHEST));
 
     //Items
     public static final Item HAND_MORTAR = register("hand_mortar", new HandMortarItem(new FabricItemSettings().group(ItemGroup.COMBAT)));

@@ -42,7 +42,10 @@
   "item.bif.elytra_chestplate.tooltip" : "Elytra Attached",
 
   "item.bif.hand_mortar" : "Wheellock Mortar",
-  "item.bif.mortar_core" : "Mortar Core",
+  "item.bif.mortar_bomb" : "Mortar Bomb",
+
+
+  "tooltip.elytra.broken": "Unusable",
 
 
   "advancements.story.iron_sharpens_iron.title" : "Iron Sharpens Iron",
