@@ -57,6 +57,27 @@ The way in which the Smithing Table was implemented has always bothered me. In i
 ***__(To Be Expanded)__***
 
 ---
+<h1 align="center">
+Mortars & Bombs
+</h1>
+
+
+
+An area denial weapon, Mortars offer the player a litany of alternatives for engaging combat that both the bow and crossbow cannot offer. 
+Fist and for most, both the mortar and hand mortar fire bombs not shells. These are inaccurate but rather appropriate deal area damage.
+Furthermore, the bombs themselves follow a similar convention to vanilla firework rockets and can be modified with potions
+and other items to grant unique effects. Mortars themselves are quite powerful but there extended reload,
+twice that of the crossbow, and priming time, the time it takes for the projectile to arm, directly limit there role to niche cases.
+
+<h6>
+Difference between a mortar and a gun
+</h6>
+
+![Alt Text](GunMortarTrajectory.jpg)
+
+***__(To Be Expanded)__***
+
+---
 
 ### A Comprehensive (and highly uncertain) Breakdown can be found at the:
 #### [By Iron or Fire Trello](https://trello.com/b/XMMYLNES/by-iron-or-fire)
