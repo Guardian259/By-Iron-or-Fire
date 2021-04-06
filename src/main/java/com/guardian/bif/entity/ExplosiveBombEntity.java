@@ -1,9 +1,7 @@
 package com.guardian.bif.entity;
 
-import com.google.common.collect.Sets;
 import com.guardian.bif.ByIronOrFire;
 import com.guardian.bif.util.registries.server.EntityRegistry;
-import com.guardian.bif.util.registries.server.ItemRegistry;
 import io.netty.buffer.Unpooled;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -12,45 +10,32 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.data.TrackedData;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
+import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionUtil;
-import net.minecraft.potion.Potions;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Set;
 import java.util.UUID;
-
-import static net.minecraft.entity.projectile.ArrowEntity.getCustomPotionColor;
 
 public class ExplosiveBombEntity extends PersistentProjectileEntity {
 
-    private static TrackedData<Integer> COLOR;
     private final boolean isUnlit = false;
     private final boolean isPrimed = false;
-    private Potion potion;
-    private final Set<StatusEffectInstance> effects;
-    private boolean colorSet;
 
     public static final Identifier SPAWN_PACKET = ByIronOrFire.id("small_bomb_packet");
 
     public ExplosiveBombEntity(EntityType<? extends PersistentProjectileEntity> entityType, World world) {
         super(entityType, world);
-        this.potion = Potions.EMPTY;
-        this.effects = Sets.newHashSet();
+        this.pickupType = PickupPermission.DISALLOWED;
     }
 
     @Environment(EnvType.CLIENT)
@@ -60,22 +45,16 @@ public class ExplosiveBombEntity extends PersistentProjectileEntity {
         updateTrackedPosition(x, y, z);
         setEntityId(id);
         setUuid(uuid);
-        this.potion = Potions.EMPTY;
-        this.effects = Sets.newHashSet();
     }
 
     public ExplosiveBombEntity(World world, LivingEntity owner) {
-        super(EntityType.ARROW, owner, world);
-        this.potion = Potions.EMPTY;
-        this.effects = Sets.newHashSet();
+        super(EntityRegistry.SMALL_BOMB, owner, world);
+        this.pickupType = PickupPermission.DISALLOWED;
     }
 
-    /*This doesn't get called*/
+
     @Override
     public void tick() {
-        ByIronOrFire.LOG.info(this.getX() + " "  + this.getY() + " " + this.getZ());
-/*        super.tick();
-        boolean bl = this.isNoClip();
         Vec3d vec3d = this.getVelocity();
         if (this.prevPitch == 0.0F && this.prevYaw == 0.0F) {
             float f = MathHelper.sqrt(squaredHorizontalLength(vec3d));
@@ -85,24 +64,46 @@ public class ExplosiveBombEntity extends PersistentProjectileEntity {
             this.prevPitch = this.pitch;
         }
         //fuse sound
-        world.playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.ENTITY_CREEPER_PRIMED, SoundCategory.NEUTRAL, 0.5F, 0);
+        //world.playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.ENTITY_CREEPER_PRIMED, SoundCategory.NEUTRAL, 0.5F, 0);
+        /*These two lines cause a Null Pointer Exception*/
+        //HitResult result = ProjectileUtil.getCollision(this, (entity -> !entity.isSpectator() && entity.isAlive() && entity.collides()));
+        //if(result.getType() == HitResult.Type.BLOCK) onBlockHit((BlockHitResult) result);
 
-        vec3d = this.getVelocity();
-        double d = vec3d.x;
-        double e = vec3d.y;
-        double g = vec3d.z;
-        while (!this.inGround) {
+        double d = this.getX() + vec3d.x;
+        double e = this.getY() + vec3d.y;
+        double f = this.getZ() + vec3d.z;
+        if (!this.inGround) {
             for(int i = 0; i < 4; ++i) {
-                this.world.addParticle(ParticleTypes.FIREWORK, this.getX() + d * (double)i / 4.0D, this.getY() + e * (double)i / 4.0D, this.getZ() + g * (double)i / 4.0D, -d, -e + 0.2D, -g);
+                this.world.addParticle(ParticleTypes.FIREWORK, d - vec3d.x * 0.25D, e - vec3d.y * 0.25D, f - vec3d.z * 0.25D, vec3d.x, vec3d.y, vec3d.z);
+                this.world.addParticle(ParticleTypes.POOF, d - vec3d.x * 2D, e - vec3d.y * 2D, f - vec3d.z * 2D, vec3d.x, vec3d.y, vec3d.z);
             }
-        }*/
+        }
+
+        this.setVelocity(vec3d.multiply((double)0.99F));
+        if (!this.hasNoGravity()) {
+            Vec3d vec3d2 = this.getVelocity();
+            this.setVelocity(vec3d2.x, vec3d2.y - (double)this.getGravity(), vec3d2.z);
+        }
+
+        this.updatePosition(d, e, f);
+        this.checkBlockCollision();
+    }
+
+    protected float getGravity() {
+        return 0.03F;
     }
 
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
         Entity entity = entityHitResult.getEntity();
-        entity.damage(DamageSource.thrownProjectile(this, this.getOwner()),3.0F);
+        entity.damage(DamageSource.mobProjectile(this, (LivingEntity) this.getOwner()),3.0F);
+    }
+
+
+    @Override
+    protected void onCollision(HitResult hitResult) {
+        super.onCollision(hitResult);
     }
 
     @Override
@@ -119,60 +120,6 @@ public class ExplosiveBombEntity extends PersistentProjectileEntity {
     @Override
     protected ItemStack asItemStack() {
         return null;
-    }
-
-    @Override
-    protected void onCollision(HitResult hitResult) {
-        super.onCollision(hitResult);
-        if(!this.world.isClient){
-
-        }
-    }
-
-    public void initFromStack(ItemStack stack) {
-        if (stack.getItem() == Items.TIPPED_ARROW) {
-            this.potion = PotionUtil.getPotion(stack);
-            Collection<StatusEffectInstance> collection = PotionUtil.getCustomPotionEffects(stack);
-            if (!collection.isEmpty()) {
-                Iterator var3 = collection.iterator();
-
-                while(var3.hasNext()) {
-                    StatusEffectInstance statusEffectInstance = (StatusEffectInstance)var3.next();
-                    this.effects.add(new StatusEffectInstance(statusEffectInstance));
-                }
-            }
-
-            int i = getCustomPotionColor(stack);
-            if (i == -1) {
-                this.initColor();
-            } else {
-                this.setColor(i);
-            }
-        } else if (stack.getItem() == ItemRegistry.MORTAR_BOMB) {
-            this.potion = Potions.EMPTY;
-            this.effects.clear();
-            this.dataTracker.set(COLOR, -1);
-        }
-
-    }
-
-    private void initColor() {
-        this.colorSet = false;
-        if (this.potion == Potions.EMPTY && this.effects.isEmpty()) {
-            this.dataTracker.set(COLOR, -1);
-        } else {
-            this.dataTracker.set(COLOR, PotionUtil.getColor((Collection)PotionUtil.getPotionEffects(this.potion, this.effects)));
-        }
-
-    }
-
-    public int getColor() {
-        return (Integer)this.dataTracker.get(COLOR);
-    }
-
-    private void setColor(int color) {
-        this.colorSet = true;
-        this.dataTracker.set(COLOR, color);
     }
 
     @Override
