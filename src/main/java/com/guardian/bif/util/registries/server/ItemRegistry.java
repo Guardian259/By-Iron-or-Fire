@@ -47,7 +47,7 @@ public class ItemRegistry {
 
     //Items
     public static final Item HAND_MORTAR = register("hand_mortar", new HandMortarItem(new FabricItemSettings().group(ItemGroup.COMBAT)));
-    public static final Item MORTAR_BOMB = register("mortar_bomb", new SmallBombItem(new FabricItemSettings().group(ItemGroup.COMBAT)));
+    public static final Item SMALL_BOMB = register("small_bomb", new SmallBombItem(new FabricItemSettings().group(ItemGroup.COMBAT)));
 
 
     public static <T extends Item> T register(String name, T item){

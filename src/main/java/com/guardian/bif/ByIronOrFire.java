@@ -38,8 +38,6 @@ public class ByIronOrFire implements ModInitializer, ClientModInitializer {
 
         LOG.info("By Iron or Fire Initializing");
 
-        //Registering of Entity Renderers
-        EntityRendererRegistry.INSTANCE.register(EntityRegistry.SMALL_BOMB, (dispatcher, context) -> new SmallBombEntityRenderer(dispatcher));
         //Registering of Items
         ItemRegistry.init();
         //Registering of Entities
@@ -62,6 +60,8 @@ public class ByIronOrFire implements ModInitializer, ClientModInitializer {
         ClientPacketsRegistry.init();
         //Registering Client Callbacks
         ClientCallbackRegistry.init();
+        //Registering of Entity Renderers
+        EntityRendererRegistry.INSTANCE.register(EntityRegistry.SMALL_BOMB_ENTITY, (dispatcher, context) -> new SmallBombEntityRenderer(dispatcher));
 
         //Registers all Dyeable Item's
         ColorProviderRegistry.ITEM.register((Stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem) Stack.getItem()).getColor(Stack), ItemRegistry.CHAINED_LEATHER_HELMET, ItemRegistry.CHAINED_LEATHER_CHESTPLATE, ItemRegistry.CHAINED_LEATHER_LEGGINGS, ItemRegistry.CHAINED_LEATHER_BOOTS);

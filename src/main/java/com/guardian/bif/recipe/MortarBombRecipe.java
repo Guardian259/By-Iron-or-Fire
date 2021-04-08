@@ -70,7 +70,7 @@ public class MortarBombRecipe extends SpecialCraftingRecipe {
 
     @Override
     public ItemStack craft(CraftingInventory inv) {
-        ItemStack itemStack = new ItemStack(ItemRegistry.MORTAR_BOMB);
+        ItemStack itemStack = new ItemStack(ItemRegistry.SMALL_BOMB);
         CompoundTag compoundTag = itemStack.getOrCreateSubTag("small_bomb");
         List<Integer> colorList = Lists.newArrayList();
 
@@ -93,7 +93,7 @@ public class MortarBombRecipe extends SpecialCraftingRecipe {
         return width * height >= 2;
     }
 
-    public ItemStack getOutput(){return new ItemStack(ItemRegistry.MORTAR_BOMB);}
+    public ItemStack getOutput(){return new ItemStack(ItemRegistry.SMALL_BOMB);}
 
     @Override
     public RecipeSerializer<?> getSerializer() {
