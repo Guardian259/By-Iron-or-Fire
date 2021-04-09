@@ -14,7 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 
 //TODO: Implement the same entity rendering system as ProjectileEntityRenderer
-public class SmallBombEntityRenderer extends EntityRenderer<BombEntity> {
+public class SmallBombEntityRenderer<T extends BombEntity> extends EntityRenderer<T> {
 
     public static final ItemStack STACK = new ItemStack(ItemRegistry.SMALL_BOMB);
 
@@ -28,7 +28,7 @@ public class SmallBombEntityRenderer extends EntityRenderer<BombEntity> {
     }
 
     @Override
-    public void render(BombEntity entity, float yaw, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light) {
+    public void render(T entity, float yaw, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light) {
         MinecraftClient.getInstance().getItemRenderer().renderItem(
                 STACK,
                 ModelTransformation.Mode.FIXED,
