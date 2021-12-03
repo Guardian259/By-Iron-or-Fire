@@ -1,4 +1,4 @@
-package com.guardian.bif.util;
+/**package com.guardian.bif.util;
 
 import com.guardian.bif.util.compoundtags.ElytraTag;
 import net.minecraft.entity.EquipmentSlot;
@@ -49,7 +49,7 @@ public class ElytraHooks {
         }
         tooltip.add(new LiteralText(""));
 
-        /*Elytra display name*/
+        /*Elytra display name*
         if (elytraStack.hasCustomName()) {
             Text display = elytraStack.getName();
             if (display instanceof MutableText) {
@@ -68,4 +68,4 @@ public class ElytraHooks {
 
     }
 
-}
+}*/

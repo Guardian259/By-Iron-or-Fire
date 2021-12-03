@@ -5,8 +5,8 @@ import com.guardian.bif.armor.BaseArmor;
 import com.guardian.bif.armor.DyeableArmor;
 import com.guardian.bif.armor.NetheriteArmor;
 import com.guardian.bif.armor.material.*;
-import com.guardian.bif.item.HandMortarItem;
-import com.guardian.bif.item.SmallBombItem;
+//import com.guardian.bif.item.HandMortarItem;
+//import com.guardian.bif.item.SmallBombItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
@@ -46,8 +46,8 @@ public class ItemRegistry {
     public static final Item CHAINED_LEATHER_BOOTS = register("chained_leather_boots", new DyeableArmor(CHAINED_LEATHER, EquipmentSlot.FEET));
 
     //Items
-    public static final Item HAND_MORTAR = register("hand_mortar", new HandMortarItem(new FabricItemSettings().group(ItemGroup.COMBAT)));
-    public static final Item SMALL_BOMB = register("small_bomb", new SmallBombItem(new FabricItemSettings().group(ItemGroup.COMBAT)));
+    //public static final Item HAND_MORTAR = register("hand_mortar", new HandMortarItem(new FabricItemSettings().group(ItemGroup.COMBAT)));
+    //ublic static final Item SMALL_BOMB = register("small_bomb", new SmallBombItem(new FabricItemSettings().group(ItemGroup.COMBAT)));
 
 
     public static <T extends Item> T register(String name, T item){

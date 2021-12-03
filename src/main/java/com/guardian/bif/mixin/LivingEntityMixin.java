@@ -45,8 +45,7 @@ public abstract class LivingEntityMixin implements LivingEntityAccessor {
         this.isDetected = status;
     }
 
-
-    @Inject(method = "method_30125", at = @At("TAIL"))
+    @Inject(method = "getSyncedArmorStack", at = @At("TAIL"))
     private void equipmentVisibility(EquipmentSlot equipmentSlot, CallbackInfoReturnable<ItemStack> cir) {
         Item currentItem = cir.getReturnValue().getItem();
         int[] visibilityRanges;

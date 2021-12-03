@@ -8,7 +8,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.item.*;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SpecialCraftingRecipe;
 import net.minecraft.recipe.SpecialRecipeSerializer;
@@ -121,7 +121,7 @@ public class ElytraAttachmentRecipe extends SpecialCraftingRecipe {
                 elytra.setCustomName(name);
             }
             /*Stores Elytra as CompoundTag*/
-            itemStack.getOrCreateTag().put(ElytraTag.ELYTRA_TAG, elytra.toTag(new CompoundTag()));
+            itemStack.getOrCreateNbt().put(ElytraTag.ELYTRA_TAG, elytra.writeNbt(new NbtCompound()));
             return itemStack;
         } else {
             return ItemStack.EMPTY;

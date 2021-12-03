@@ -1,7 +1,7 @@
 package com.guardian.bif.mixin;
 
 import com.guardian.bif.ByIronOrFire;
-import com.guardian.bif.util.ElytraHooks;
+//import com.guardian.bif.util.ElytraHooks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.*;
@@ -22,7 +22,7 @@ public class PlayerEntityMixin extends LivingEntityMixin {
     @Inject(method = "tick", at = @At("HEAD"))
     public void onTick(CallbackInfo ci) {
         PlayerEntity playerEntity = (PlayerEntity) (Object) this;
-        ElytraHooks.updateColytra(playerEntity);
+        //ElytraHooks.updateColytra(playerEntity);
 
         DefaultedList<ItemStack> armorArray = inventory.armor;
 

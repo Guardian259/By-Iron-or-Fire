@@ -1,4 +1,4 @@
-package com.guardian.bif.util.registries.client;
+/**package com.guardian.bif.util.registries.client;
 
 import com.guardian.bif.util.compoundtags.ElytraTag;
 import net.minecraft.entity.EquipmentSlot;
@@ -23,4 +23,4 @@ public class ClientCallbackRegistry {
     public static void init() {
         renderElytraRegistry();
     }
-}
+}*/

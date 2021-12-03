@@ -5,23 +5,23 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ElytraItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 
 public class ElytraTag {
 
     public static final String ELYTRA_TAG = ByIronOrFire.MODID + ":ElytraUpgrade";
 
     public static boolean hasUpgrade(ItemStack stack){
-        return stack.getSubTag(ELYTRA_TAG) != null;
+        return stack.getSubNbt(ELYTRA_TAG) != null;
     }
 
     public static ItemStack getElytra(ItemStack stack){
-        CompoundTag compoundTag = stack.getSubTag(ELYTRA_TAG);
-        return compoundTag != null ? ItemStack.fromTag(compoundTag) : ItemStack.EMPTY;
+        NbtCompound compoundTag = stack.getSubNbt(ELYTRA_TAG);
+        return compoundTag != null ? ItemStack.fromNbt(compoundTag) : ItemStack.EMPTY;
     }
 
     public static void setElytra(ItemStack chestStack, ItemStack elytraStack){
-        chestStack.getOrCreateTag().put(ELYTRA_TAG, elytraStack.toTag(new CompoundTag()));
+        chestStack.getOrCreateNbt().put(ELYTRA_TAG, elytraStack.writeNbt(new NbtCompound()));
     }
 
     public static void damageElytra(LivingEntity livingEntity,ItemStack chestStack, ItemStack elytraStack, int amount){

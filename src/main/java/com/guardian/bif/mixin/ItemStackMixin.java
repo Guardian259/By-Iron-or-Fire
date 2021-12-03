@@ -1,6 +1,6 @@
 package com.guardian.bif.mixin;
 
-import com.guardian.bif.util.ElytraHooks;
+//import com.guardian.bif.util.ElytraHooks;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -16,7 +16,7 @@ import java.util.List;
 public class ItemStackMixin {
     @Inject(method = "getTooltip", at = @At("RETURN"), cancellable = true)
     public void getTooltip(PlayerEntity player, TooltipContext context, CallbackInfoReturnable<List<Text>> cir) {
-        ElytraHooks.appendAttachedElytraTooltip((ItemStack) (Object) this, cir.getReturnValue());
+        //ElytraHooks.appendAttachedElytraTooltip((ItemStack) (Object) this, cir.getReturnValue());
     }
 
 }
