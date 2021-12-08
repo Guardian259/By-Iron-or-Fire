@@ -10,5 +10,30 @@ public interface LivingEntityAccessor {
 
     void setIsDetected(boolean status);
 
+    int getFrozenTickDamage();
+
+    void setFrozenTickDamage(int damage);
+
+    float getMinEntityHealth();
+
+    void setMinEntityHealth(float health);
+
+    float minEntityHealth();
+
+    int frozenTickDamage();
+
+    boolean inIcyWater();
+
+    boolean inIcyBiome();
+
+    boolean inSnowstorm();
+
+    int icyWaterTick();
+
+    int icyBiomeTick();
+
+    int snowstormTick();
+
+    int snowfallMultiplier();
 
 }

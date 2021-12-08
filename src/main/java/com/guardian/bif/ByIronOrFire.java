@@ -1,6 +1,5 @@
 package com.guardian.bif;
 
-//import com.guardian.bif.util.registries.client.ClientCallbackRegistry;
 import com.guardian.bif.util.registries.server.FreezingRegistry;
 import com.guardian.bif.util.registries.server.ItemRegistry;
 import com.guardian.bif.util.registries.server.VisibilityRegistry;
